@@ -1,4 +1,4 @@
-# ocf-converter-sdk
+# ocf-converter-sdk for TypeScript
 
 SDK for [onlineconvertfree.com](https://onlineconvertfree.com/) [file conversion API](https://onlineconvertfree.com/file-conversion-api/).
 
