@@ -1,0 +1,39 @@
+{
+    "name": "ocf-converter-sdk",
+    "version": "1.0.0",
+    "description": "SDK for onlineconvertfree.com file conversion API",
+    "keywords": [
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "typescript",
+        "sdk",
+        "rest",
+        "api"
+    ],
+    "homepage": "https://github.com/webpractik/ocf-converter-sdk-ts#readme",
+    "bugs": "https://github.com/webpractik/ocf-converter-sdk-ts/issues",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/webpractik/ocf-converter-sdk-ts.git"
+    },
+    "scripts": {
+        "clean": "rm -Rf node_modules/ *.js",
+        "build": "tsc",
+        "api-codegen": "openapi -i https://api-tasker.onlineconvertfree.com/api/json/content?token=nya -o src/api --request src/api/customRequest.ts"
+    },
+    "dependencies": {
+        "axios": "^1.1.3"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.9",
+        "openapi-typescript-codegen": "^0.23.0",
+        "typescript": "^4.8.4"
+    },
+    "engines": {
+        "node": "16.15.1"
+    }
+}
