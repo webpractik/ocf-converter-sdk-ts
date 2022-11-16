@@ -1,6 +1,6 @@
 {
     "name": "ocf-converter-sdk",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "SDK for onlineconvertfree.com file conversion API",
     "keywords": [
         "openapitools",
