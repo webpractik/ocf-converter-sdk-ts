@@ -37,16 +37,20 @@ const result = await task.waitForConversion();
 if (result.isSuccess()) {
     const resultUrl = result.getResultingFileUrl() as string;
 
-    https.get(resultUrl, (response => {
-        const path = `${__dirname}/result.${extensionToConvertTo}`;
-        const filePath = fs.createWriteStream(path);
-        response.pipe(filePath);
-        filePath.on('finish', async () => {
-            filePath.close();
+    await new Promise((resolve, reject) => {
+        https.get(resultUrl, (response => {
+            const path = `${__dirname}/result.${extensionToConvertTo}`;
+            const filePath = fs.createWriteStream(path);
+            response.pipe(filePath);
+            filePath.on('finish', async () => {
+                filePath.close();
 
-            await result.deleteFile();
-        });
-    }));
+                await result.deleteFile();
+
+                resolve(0);
+            }).on('error', error => reject(error));
+        })).on('error', error => reject(error));
+    });
 }
 ```
 
